@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+    color: #1a1f2e;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #eef2f6; }
+  ::-webkit-scrollbar-thumb { 
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    border-radius: 20px; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FF8E72, #45B7D1);
+  }
+}
+
+@layer components {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(78, 205, 196, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108, 92, 231, 0.08) 1px, transparent 1px);
+    background-size: 52px 52px;
+    background-color: #f8faff;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(78, 205, 196, 0.1), 0 2px 8px rgba(0,0,0,0.02);
+  }
+  
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 24px rgba(78, 205, 196, 0.15);
+  }
+  
+  .glow-teal {
+    box-shadow: 0 0 30px rgba(78, 205, 196, 0.3), 0 0 60px rgba(78, 205, 196, 0.15);
+  }
+  
+  .glow-amber {
+    box-shadow: 0 0 30px rgba(255, 179, 71, 0.3), 0 0 60px rgba(255, 179, 71, 0.15);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(163, 99, 217, 0.3), 0 0 60px rgba(163, 99, 217, 0.15);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 30px rgba(255, 107, 139, 0.3), 0 0 60px rgba(255, 107, 139, 0.15);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #6C5CE7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-sunset {
+    background: linear-gradient(135deg, #FF6B6B, #FFB347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-ocean {
+    background: linear-gradient(135deg, #4ECDC4, #6C5CE7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .timeline-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #FF6B6B, #4ECDC4, #6C5CE7);
+    transform: translateX(-50%);
+  }
+
+  /* New colorful card styles */
+  .card-sunset {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 179, 71, 0.1));
+    border: 1px solid rgba(255, 107, 107, 0.2);
+  }
+
+  .card-ocean {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(108, 92, 231, 0.1));
+    border: 1px solid rgba(78, 205, 196, 0.2);
+  }
+
+  .card-forest {
+    background: linear-gradient(135deg, rgba(107, 203, 119, 0.1), rgba(152, 217, 193, 0.1));
+    border: 1px solid rgba(107, 203, 119, 0.2);
+  }
+
+  .card-berry {
+    background: linear-gradient(135deg, rgba(255, 159, 159, 0.1), rgba(214, 93, 177, 0.1));
+    border: 1px solid rgba(255, 107, 139, 0.2);
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(
+      45deg,
+      #FF6B6B,
+      #4ECDC4,
+      #6C5CE7,
+      #FFB347,
+      #FF6B8B
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-4 py-2 rounded-xl font-display font-bold text-sm transition-all;
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-xl font-display font-bold text-sm transition-all;
+    background: white;
+    color: #1a1f2e;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+  
+  .btn-secondary:hover {
+    border-color: #4ECDC4;
+    background: rgba(78, 205, 196, 0.05);
+  }
+
+  /* Status badges */
+  .badge-success {
+    @apply px-2 py-0.5 rounded-full text-xs font-mono;
+    background: rgba(107, 203, 119, 0.15);
+    color: #2E7D32;
+    border: 1px solid rgba(107, 203, 119, 0.3);
+  }
+
+  .badge-warning {
+    @apply px-2 py-0.5 rounded-full text-xs font-mono;
+    background: rgba(255, 179, 71, 0.15);
+    color: #B65F00;
+    border: 1px solid rgba(255, 179, 71, 0.3);
+  }
+
+  .badge-info {
+    @apply px-2 py-0.5 rounded-full text-xs font-mono;
+    background: rgba(78, 205, 196, 0.15);
+    color: #1F7A7A;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+  }
+
+  .badge-purple {
+    @apply px-2 py-0.5 rounded-full text-xs font-mono;
+    background: rgba(108, 92, 231, 0.15);
+    color: #4A3F9E;
+    border: 1px solid rgba(108, 92, 231, 0.3);
+  }
+
+  /* Input styles */
+  .input-light {
+    @apply w-full rounded-lg px-3 py-2 text-sm transition-all;
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1a1f2e;
+  }
+  
+  .input-light:focus {
+    outline: none;
+    border-color: #4ECDC4;
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+  }
+
+  /* Slider styles */
+  .slider-light {
+    @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+    background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #6C5CE7);
+  }
+  
+  .slider-light::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border: 2px solid #4ECDC4;
+    cursor: pointer;
+  }
+
+  /* Chart colors */
+  .chart-gradient-1 {
+    background: linear-gradient(180deg, #FF6B6B 0%, #FFB347 100%);
+  }
+  
+  .chart-gradient-2 {
+    background: linear-gradient(180deg, #4ECDC4 0%, #6C5CE7 100%);
+  }
+  
+  .chart-gradient-3 {
+    background: linear-gradient(180deg, #6BCB77 0%, #98D9C1 100%);
+  }
+}
